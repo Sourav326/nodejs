@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/Sourav326/nodejs/issues"
   },
-  "homepage": "https://github.com/Sourav326/nodejs#readme"
+  "homepage": "https://github.com/Sourav326/nodejs#readme",
+  "dependencies": {}
 }
