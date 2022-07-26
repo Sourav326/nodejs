@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "This is for learning the node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sourav326/nodejs.git"
+  },
+  "author": "Sourav Chauhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sourav326/nodejs/issues"
+  },
+  "homepage": "https://github.com/Sourav326/nodejs#readme"
+}
