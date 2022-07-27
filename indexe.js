@@ -1,30 +1,36 @@
 const express = require('express');
-const app = express();
+const app = express();//(Third part module)
 
-const path = require('path');
+// const path = require('path');//use the path module (Build-In module)
 
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: false}));
+const router = require('./Routes');
+
+//use this to use the body with request in below code
+const bodyParser = require('body-parser');//(Third part module)
+app.use(bodyParser.urlencoded({extended: false}));//app.use:- we define the middleware, we want to use in use() function
 
 app.use(express.json());//for using the json in post request
 
+app.use(router);
+
 const port = 3001;
 
-app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname+"/index.html"));
-});
+// app.get("/",(req,res)=>{
+//     res.sendFile(path.join(__dirname+"/index.html"));//get the path of the file
+// });
 
-app.post("/create-user",(req,res)=>{
-    const userName = req.body.name;
-    const userEmail = req.body.email;
-    const userCountry = req.body.country;
-    res.json({
-        name: userName,
-        email: userEmail,
-        country: userCountry,
-    })
-    res.send(`<h1>Firstname:- ${req.body.firstname}</h1> <h1>Lastname:- ${req.body.lastname}</h1> <h1>Country:- ${req.body.country}</h1>`)
-})
+//post API  *** commented this as we created the controller and routes for this seperately
+// app.post("/create-user",(req,res)=>{
+//     const userFirstname = req.body.firstname;
+//     const userLastname = req.body.lastname;
+//     const userCountry = req.body.country;
+//     res.json({
+//         success:true,
+//         firstname: userFirstname,
+//         lastname: userLastname,
+//         country: userCountry,
+//     });
+// });
 
 
 app.listen(port,()=>{
